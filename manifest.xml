@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Remote repositories -->
+    <remote name="blaze" fetch="git@git.hs-coburg.de:TEAM_BLAZE" />
+    <remote name="ad" fetch="git@git.hs-coburg.de:Autonomous_Driving" />
+
+    <!-- Define the default branch -->
+    <!-- <default revision="main" remote="blaze" /> -->
+
+    <!-- Team Blaze repositories -->
+    <project name="interior_monitoring" path="interior_monitoring" remote="blaze" revision="main"/>
+    <project name="lane_detection" path="lane_detection" remote="blaze" revision="main"/>
+    <project name="localization" path="localization" remote="blaze" revision="main"/>
+    <project name="v2x_receiver" path="v2x_receiver" remote="blaze" revision="main"/>
+    <project name="environment_model" path="environment_model" remote="blaze" revision="main"/>
+    <project name="global_planning" path="global_planning" remote="blaze" revision="main"/>
+    <project name="behavior_planning" path="behavior_planning" remote="blaze" revision="main"/>
+    <project name="local_planning" path="local_planning" remote="blaze" revision="main"/>
+    <project name="lateral_control" path="lateral_control" remote="blaze" revision="main"/>
+    <project name="longitudinal_control" path="longitudinal_control" remote="blaze" revision="main"/>
+    <project name="v2x_transmitter" path="v2x_transmitter" remote="blaze" revision="main"/>
+
+    <!-- Autonomous Driving public repositories -->
+    <project name="model_city_map" path="model_city_map" remote="ad" revision="master"/>
+    <project name="car_description" path="car_description" remote="ad" revision="master"/>
+    <project name="v2x" path="v2x" remote="ad" revision="master"/>
+
+</manifest>
