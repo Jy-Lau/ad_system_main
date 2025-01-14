@@ -20,7 +20,7 @@ This package receives the input of current position from localization package, d
 - [Use case and scenario](#use-case-and-scenario)
 - [License](#license)
 
-## Architecture diagram (old version, new version to be updated)
+## Block diagram (old version, new version to be updated)
 
 ![Alt Text](doc/system_architecture.png)
 
