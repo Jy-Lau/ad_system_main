@@ -7,7 +7,7 @@ ROS2 main package that integrates all of the sub-packages for Team Blaze's auton
 This package receives the input of current position from localization package, desired position from local planning package and output the desired brake and throttle to the actuators.
 
 ## Table of Contents
-- [Architecture Diagram](#architecture-diagram)
+- [Block Diagram](#block-diagram)
 - [Milestone](#milestone)
 - [State Diagram](#state-diagram)
 - [Activity Diagram](#activity-diagram)
@@ -20,7 +20,7 @@ This package receives the input of current position from localization package, d
 - [Use case and scenario](#use-case-and-scenario)
 - [License](#license)
 
-## Block diagram (old version, new version to be updated)
+## Block diagram
 
 ![Alt Text](doc/system_architecture.png)
 
@@ -32,32 +32,48 @@ This package receives the input of current position from localization package, d
 stateDiagram-v2
 direction LR
     [*] --> Idle
-    Idle --> Driving : Users boarded the shuttle\nand door closed
+    Idle --> Driving : Users boarded the shuttle and door closed
     Driving --> Wait : Shuttle arrived at the destination
     Wait --> End : Shuttle arrived at school
-    Wait --> Driving : Users boarded the shuttle\nand door closed
-    Driving --> Emergency : Shuttle operator confirmed\ntrue medical emergencies alarm
+    Wait --> Driving : Users boarded the shuttle and door closed
+    Driving --> Emergency : Shuttle operator confirmed true medical emergencies alarm
     Emergency --> End : Shuttle arrived at hospital
     End --> [*]
 ```
 
 ## Activity Diagram
-### Activity 1: Medical Emergencies detected
+### Activity 1: Medical Emergencies detected while driving
 ```mermaid
 flowchart TD
 
-    0(( )) --> 1[Autonomous Shuttle starts\nto move towards destination]
+    0(( )) --> 1[Autonomous shuttle started to move towards next destination]
     1 --> 2[User faces medical emergencies]
-    2 --> 3[AI camera detected\nand send notifications to shuttle operator ]
-    3 --> 4[Shuttle operators intervene\nto confirm it is True or False Alarm]
+    2 --> 3[AI camera detected and send notifications to shuttle operator ]
+    3 --> 4[Autonomous shuttle operators intervene to confirm it is True or False Alarm]
     4 --> 4A{ }
-    4A -->|True Alarm| 5[Shuttle re-plans new route to nearby hospital]
+    4A -->|True Alarm| 5[Autonomous shuttle re-plans new route to nearby hospital]
     4A -->|False Alarm| 8(( ))
-    5 --> 6[Shuttle sends notifications\nto nearby hospital that\nshuttle is arriving to their facility]
-    6 --> 7[Shuttle operators inform parents\nthrough pre-defined communication]
+    5 --> 6[Autonomous shuttle sends notifications to nearby hospital that shuttle is arriving to their facility]
+    6 --> 7[Autonomous shuttle operators inform parents through pre-defined communication]
     7 --> 8
 
     class 0,8 circle;
+```
+
+### Activity 2: Normal scenario without medical emergencies detected while driving
+```mermaid
+flowchart TD
+
+    0(( )) --> 1[Autonomous shuttle started to move towards next pick-up location]
+    1 --> 2[Autonomous shuttle arrived at the pick-up location]
+    2 --> 3[User boarded the autonomous shuttle]
+    3 --> 4[Autonomous shuttle check if there are any pupils left to pick-up]
+    4 --> 4A{ }
+    4A -->|Yes| 1
+    4A -->|No| 5[Autonomous shuttle move towards school]
+    5 --> 6(( ))
+
+    class 0,6 circle;
 ```
 ## Sequence Diagram
 
