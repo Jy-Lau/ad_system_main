@@ -29,3 +29,17 @@ qtcreator-*
 COLCON_IGNORE
 AMENT_IGNORE
 
+interior_monitoring/
+lane_detection/
+localization/
+v2x_receiver/
+environment_model/
+global_planning/
+behavior_planning/
+local_planning/
+lateral_control/
+longitudinal_control/
+v2x_transmitter/
+model_city_map/
+car_description/
+v2x/
