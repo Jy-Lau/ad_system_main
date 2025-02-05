@@ -11,9 +11,6 @@ Team Blaze is a dynamic startup company founded by a team of eight passionate in
 Carolen Albert represents parents that are occupied with their busy career who can benefits from autonomous shuttle system to fetch her children from home to school and school to home. She wants her children to arrive at school on time every day, and back at home safe. Carolen is particularly focused on safety and rapid response in emergencies.
 ![Alt Text](doc/persona.png)
 
-## Story Map
-![Alt Text](doc/story_map.png)
-
 ## Solution space
 
 This following sections describe the solution space of our projects.
