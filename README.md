@@ -76,6 +76,34 @@ flowchart TD
     class 0,6 circle;
 ```
 ## Sequence Diagram
+```mermaid
+sequenceDiagram
+    participant Student
+    participant Vehicle
+    participant Shuttle Operator
+    participant Traffic Lights
+    participant Emergency Services
+    participant Nearby Vehicles
+    participant Parent
+
+    Student->>Vehicle: Boards Bus
+    activate Vehicle
+    Vehicle->>Vehicle: Activates Interior Monitoring
+    Vehicle->>Vehicle: Scan for distress
+    note right of Vehicle: Continuous Monitoring
+    alt Emergency Detected
+        Vehicle->>Shuttle Operator: Report distress
+        Shuttle Operator->>Emergency Services: Alert Medical Emergency
+        Shuttle Operator->>Vehicle: Communicate emergency maneuver
+        Vehicle->>Traffic Lights: Communicate to turn signal GREEN
+        Shuttle Operator->>Emergency Services: Redirecting alert to Emergency Facility
+        Vehicle->>Nearby Vehicles: Notify Nearby Vehicles
+        Shuttle Operator->>Parent: Notify Parent
+    end
+    Vehicle->>Vehicle: Continue to next location
+    Vehicle->>Student: Arrive at School
+    deactivate Vehicle
+```
 
 ## Sub-packages
 | **Package Name**       | **Link**                  | **Description**                                       |**Contributor**|
