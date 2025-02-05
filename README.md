@@ -9,7 +9,9 @@ Team Blaze is a dynamic startup company founded by a team of eight passionate in
 
 ## Persona
 Carolen Albert represents parents that are occupied with their busy career who can benefits from autonomous shuttle system to fetch her children from home to school and school to home. She wants her children to arrive at school on time every day, and back at home safe. Carolen is particularly focused on safety and rapid response in emergencies.
-![Alt Text](doc/persona.png)
+<p align="center">
+  <img src="doc/persona.png" width="50%">
+</p>
 
 ## Solution space
 
@@ -31,8 +33,9 @@ This following sections describe the solution space of our projects.
 - [License](#license)
 
 ## Story Map
-
-![Alt Text](doc/story_map.png)
+<p>
+  <img src="doc/story_map.png" width="100%">
+</p>
 
 ## Block diagram
 
