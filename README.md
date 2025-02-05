@@ -1,12 +1,25 @@
-# Autonomous Driving System
+# Introduction
 
-ROS2 main package that integrates all of the sub-packages for Team Blaze's autonomous driving system.
+Team Blaze is a dynamic startup company founded by a team of eight passionate individuals. Our mission is to solve pupils' transportation problem using our expertise in autonomous driving industry with innovative software solutions.
 
-## Overview
+# Problem space
 
-This package receives the input of current position from localization package, desired position from local planning package and output the desired brake and throttle to the actuators.
+## Question zero
+*How can we design and develop software solutions to detect and react accordingly on the medical emergencies happened among the pupils during their school-to-home commute with autonomous shuttle in Bamberg?*
+
+## Persona
+Carolen Albert represents parents that are occupied with their busy career who can benefits from autonomous shuttle system to fetch her children from home to school and school to home. She wants her children to arrive at school on time every day, and back at home safe. Carolen is particularly focused on safety and rapid response in emergencies.
+![Alt Text](doc/persona.png)
+
+## Story Map
+![Alt Text](doc/story_map.png)
+
+## Solution space
+
+This following sections describe the solution space of our projects.
 
 ## Table of Contents
+- [Story Map](#story-map)
 - [Block Diagram](#block-diagram)
 - [Milestone](#milestone)
 - [State Diagram](#state-diagram)
@@ -20,9 +33,13 @@ This package receives the input of current position from localization package, d
 - [Use case and scenario](#use-case-and-scenario)
 - [License](#license)
 
+## Story Map
+
+![Alt Text](doc/story_map.png)
+
 ## Block diagram
 
-![Alt Text](doc/system_architecture.png)
+![Alt Text](doc/block_diagram.png)
 
 ## Milestone
 
