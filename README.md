@@ -179,15 +179,18 @@ ros2 launch ad_system_main ad_system_main.launch.py
 ```
 
 ## Use case and scenario
+<p align="center">
+  <img src="doc/use_case-model_city.png" width="50%">
+</p>
+
 ### Use Case 1: Normal Scenario – Path to School
-The model car starts from its initial location, travels to two pickup points, and finally reaches its destination (school). The car will follow predefined lanes, stop at traffic lights, and be aware of obstacles and other vehicles in the environment. The car will use V2X communication to interact with the traffic lights and other vehicles.
+The model car starts from its initial start point, travels to two pickup points, and finally reaches its destination (School). The car will follow predefined lanes, stop at traffic lights, and be aware of obstacles and other vehicles in the environment. The car will use V2X communication to interact with the traffic lights and other vehicles.
 ### Required V2X Messages (ETSI Standards):
 - **SPAT:**
-- **DENM:**
 - **CAM:**
 
 ### Use Case 2: Medical Emergencies Scenario – Reroute to Hospital
-The model car starts from its initial location, travels to the first pickup point. After departing from the first pickup point to the second pick up point, medical emergencies are detected and the model car is rerouted to nearby hospital. The car will cut through the traffic to reach the destination faster, use V2X communication to control traffic light to show green and notify nearby vehicles that the car is having medical emergencies.
+The model car starts from its initial start point, travels to the first pickup point. After departing from the first pickup point and on the way to the second pick up point, medical emergencies are detected and the model car is rerouted to nearby Hospital. The car will cut through the traffic to reach the destination faster, use V2X communication to control traffic light to show green and notify nearby vehicles that the car is having medical emergencies.
 ### Required V2X Messages (ETSI Standards):
 - **SPAT:**
 - **DENM:**
