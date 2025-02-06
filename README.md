@@ -1,9 +1,8 @@
 # Introduction :fire:
-
 Team Blaze is a dynamic startup company founded by a team of eight passionate individuals. Our mission is to solve pupils' transportation problem using our expertise in autonomous driving industry with innovative software solutions.
 
 # Problem space :question:
-This following sections describe the problem space of our project.
+This following sections describe the problem space of our project which consists of [Question Zero](#question-zero) and [Persona](#persona) before we enter into [Solution space](#solution-space-bulb). This section show the journey on how we derived the problem we going to solve for autonomous shuttle in pupils' transportation. 
 
 ## Question zero
 *How can we design and develop software solutions to detect and react accordingly on the medical emergencies happened among the pupils during their school-to-home commute with autonomous shuttle in Bamberg?*
@@ -15,8 +14,7 @@ Carolen Albert represents parents that are occupied with their busy career who c
 </p>
 
 # Solution space :bulb:
-
-This following sections describe the solution space of our project, including story map, system architecture, installation guide, usage guide, testing guide and project management.
+This following sections describe the solution space of our project, whereby each sub-chapter's topic are shown in [Table of Contents](#table-of-contents). We start of with deriving product requirements to [Story Map](#story-map) that will fulfill users' needs for the problem we derived from problem space.
 
 ## Table of Contents
 - [Story Map](#story-map)
@@ -28,13 +26,14 @@ This following sections describe the solution space of our project, including st
 - [License](#license)
 
 ## Story Map
-Describe sth here about story map and transition from last chapter
+Story map is a visual tool used in agile development to organize product requirements based on real-world user experiences. It helps teams break down the product journey into goals, epics, and user stories, ensuring a clear structure for development.
 <p>
   <img src="doc/story_map.png" width="100%">
 </p>
 
 ## System Architecture
-Describe sth here about system architecture, function of all of the relevant UML diagrams and transition from last chapter
+This section consists of the technical specifications of our product. [Block diagram](#block-diagram) describes the high level layered architecture of our ROS2 product, and within each layer of *Sense, Plan, Act* we have 11 independent submodules work together. There are three Behavioral UML diagrams related to our system architecture are described below: [State Diagram](#state-diagram), [Activity Diagram](#activity-diagram) and [Sequence Diagram](#sequence-diagram).
+
 ## Block diagram
 
 ![Alt Text](doc/block_diagram.png)
@@ -131,12 +130,9 @@ sequenceDiagram
 | `longitudinal_control` | (https://git.hs-coburg.de/TEAM_BLAZE/longitudinal_control)|      | [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | (https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter)|      |[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 
-## Parameters (Runtime-Adjustable)
-| **Parameter Name**     | **Type**        | **Default Value**  | **Description**                                      |
-|------------------------|-----------------|--------------------|------------------------------------------------------|
-| `TBC` | `TBC`           | `TBC`               | |
 
 ## Installation
+This section provide guidance on how to setup our ROS2 software. By using [repo](https://gerrit.googlesource.com/git-repo) tool we can clone all of the latest revision of our submodules at once by referring to the repositories link stated in [manifest.xml](./manifest.xml).
 1. Clone the repository:
 ```bash
  git clone https://git.hs-coburg.de/TEAM_BLAZE/ad_system_main.git
@@ -156,6 +152,7 @@ repo sync
 ```
 
 ## Usage
+This section provide guidance on how to run our ROS2 software.
 ### Launching the Nodes
 To launch all of the nodes in ad system main package, run the following command:
 
@@ -164,7 +161,7 @@ ros2 launch ad_system_main ad_system_main.launch.py
 ```
 
 ## Testing
-
+This section provide guidance on how to perform integration test of all of our submodules in our ROS2 software.
 ### System Tests
 To run the system tests for this package, use the similar command from launch file:
 
@@ -173,7 +170,7 @@ ros2 launch ad_system_main ad_system_main.launch.py
 ```
 
 ## Project Management
-Describe sth here about project management (made up of use case and scenario, milestone, team roles and responbilities) and transition from last chapter
+This section covered project management related topics. It ensures that projects are completed successfully, on time, and meet the required quality standards. [Use case and scenario](#use-case-and-scenario) described the use case scenario on how our product can handle the real life situation by mimicking the environmental conditions at [model city](https://git.hs-coburg.de/Autonomous_Driving/general_informations/src/branch/master/resource/model_city.png). [Milestone](#milestone) provides the roadmap of our target goals to achieve all the way until Module 6 in July 2025. [Team roles and responsibilities](#team-roles-and-responsibilities) stated each of the team member's responsibilities during project hour and off project hour.
 
 ## Use case and scenario
 <p align="center">
