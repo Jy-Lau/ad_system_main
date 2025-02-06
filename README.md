@@ -38,6 +38,21 @@ This section consists of the technical specifications of our product. [Block dia
 
 ![Alt Text](doc/block_diagram.png)
 
+### Component responsibilities
+| **Package Name**       | **Link**                  | **Description**                                       |**Contributor**|
+|------------------------|---------------------------|-------------------------------------------------------|---------|
+| `interior_monitoring` | https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring|      |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh)
+| `lane_detection` | https://git.hs-coburg.de/TEAM_BLAZE/lane_detection|      |[Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s)
+| `localization` | https://git.hs-coburg.de/TEAM_BLAZE/localization|                 | [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
+| `v2x_receiver` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver|      |[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
+| `environment_model` | https://git.hs-coburg.de/TEAM_BLAZE/environment_model|                 | [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s)
+| `global_planning` | https://git.hs-coburg.de/TEAM_BLAZE/global_planning|      |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning|      |[Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
+| `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning|      |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `lateral_control` | https://git.hs-coburg.de/TEAM_BLAZE/lateral_control|      | [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
+| `longitudinal_control` | https://git.hs-coburg.de/TEAM_BLAZE/longitudinal_control|      | [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
+| `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter|      |[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
+
 ## State Diagram
 ```mermaid
 stateDiagram-v2
@@ -114,22 +129,6 @@ sequenceDiagram
     Vehicle->>Student: Arrive at School
     deactivate Vehicle
 ```
-
-## Component responsibilities
-| **Package Name**       | **Link**                  | **Description**                                       |**Contributor**|
-|------------------------|---------------------------|-------------------------------------------------------|---------|
-| `interior_monitoring` | (https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring)|      |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh)
-| `lane_detection` | (https://git.hs-coburg.de/TEAM_BLAZE/lane_detection)|      |[Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s)
-| `localization` | (https://git.hs-coburg.de/TEAM_BLAZE/localization)|                 | [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
-| `v2x_receiver` | (https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver)|      |[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
-| `environment_model` | (https://git.hs-coburg.de/TEAM_BLAZE/environment_model)|                 | [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s)
-| `global_planning` | (https://git.hs-coburg.de/TEAM_BLAZE/global_planning)|      |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `behavior_planning` | (https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning)|      |[Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
-| `local_planning` | (https://git.hs-coburg.de/TEAM_BLAZE/local_planning)|      |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `lateral_control` | (https://git.hs-coburg.de/TEAM_BLAZE/lateral_control)|      | [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
-| `longitudinal_control` | (https://git.hs-coburg.de/TEAM_BLAZE/longitudinal_control)|      | [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
-| `v2x_transmitter` | (https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter)|      |[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
-
 
 ## Installation
 This section provide guidance on how to setup our ROS2 software. By using [repo](https://gerrit.googlesource.com/git-repo) tool we can clone all of the latest revision of our submodules at once by referring to the repositories link stated in [manifest.xml](./manifest.xml).
