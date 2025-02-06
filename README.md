@@ -16,36 +16,30 @@ Carolen Albert represents parents that are occupied with their busy career who c
 
 # Solution space :bulb:
 
-This following sections describe the solution space of our project.
+This following sections describe the solution space of our project, including story map, system architecture, installation guide, usage guide, testing guide and project management.
 
 ## Table of Contents
 - [Story Map](#story-map)
-- [Block Diagram](#block-diagram)
-- [Milestone](#milestone)
-- [State Diagram](#state-diagram)
-- [Activity Diagram](#activity-diagram)
-- [Sequence Diagram](#sequence-diagram)
-- [Sub-Packages](#sub-packages)
-- [Parameters](#parameters)
+- [System Architecture](#system-architecture)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
-- [Use case and scenario](#use-case-and-scenario)
+- [Project Management](#project-management)
 - [License](#license)
 
 ## Story Map
+Describe sth here about story map and transition from last chapter
 <p>
   <img src="doc/story_map.png" width="100%">
 </p>
 
+## System Architecture
+Describe sth here about system architecture, function of all of the relevant UML diagrams and transition from last chapter
 ## Block diagram
 
 ![Alt Text](doc/block_diagram.png)
 
-## Milestone
-
 ## State Diagram
-
 ```mermaid
 stateDiagram-v2
 direction LR
@@ -58,7 +52,6 @@ direction LR
     Emergency --> End : Shuttle arrived at hospital
     End --> [*]
 ```
-
 ## Activity Diagram
 ### Activity 1: Medical Emergencies detected while driving
 ```mermaid
@@ -77,7 +70,6 @@ flowchart TD
 
     class 0,8 circle;
 ```
-
 ### Activity 2: Normal scenario without medical emergencies detected while driving
 ```mermaid
 flowchart TD
@@ -93,6 +85,7 @@ flowchart TD
 
     class 0,6 circle;
 ```
+
 ## Sequence Diagram
 ```mermaid
 sequenceDiagram
@@ -123,7 +116,7 @@ sequenceDiagram
     deactivate Vehicle
 ```
 
-## Sub-packages
+## Component responsibilities
 | **Package Name**       | **Link**                  | **Description**                                       |**Contributor**|
 |------------------------|---------------------------|-------------------------------------------------------|---------|
 | `interior_monitoring` | (https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring)|      |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh)
@@ -179,6 +172,9 @@ To run the system tests for this package, use the similar command from launch fi
 ros2 launch ad_system_main ad_system_main.launch.py
 ```
 
+## Project Management
+Describe sth here about project management (made up of use case and scenario, milestone, team roles and responbilities) and transition from last chapter
+
 ## Use case and scenario
 <p align="center">
   <img src="doc/use_case-model_city.png" width="50%">
@@ -197,6 +193,22 @@ The model car starts from its initial start point, travels to the first pickup p
 - **DENM:**
 - **SRM, SSM:**
 - **CAM:**
+
+## Milestone
+![Alt Text](doc/milestone.png)
+
+## Team roles and responsibilities
+
+| Role           |Responsibility          | Member |
+|----------------|------------------------|--------|
+|  **Event manager for team building activities** | Organizing events by decide the location, coordinate logistics, select engaging exercises. |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh) |
+|  ||[Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s) |
+|   | |[Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid) |
+| **Daily meetings timekeeper**  |Ensure every team member follow our team's meeting rules such as be on time.|[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s) |
+| **Daily meetings notetaker** | Take note to keep track of professors' feedback during meetings|[Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s) |
+| **Team helper**|Help out other team members on technical responsibilites such as ROS2 and Python related tasks. |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B) |
+| **Content specialist** |  Prepare ppt slides for weekly presentations and project pitch presentations. |[Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath) |
+| **Scrum master**  | Break down the tasks and distribute to team members. Review the task progress of each team member to ensure they are on track.|[Jia Yong Lau](https://git.hs-coburg.de/jia0198s) |
 
 ## License
 
