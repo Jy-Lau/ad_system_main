@@ -1,8 +1,9 @@
-# Introduction
+# Introduction :fire:
 
 Team Blaze is a dynamic startup company founded by a team of eight passionate individuals. Our mission is to solve pupils' transportation problem using our expertise in autonomous driving industry with innovative software solutions.
 
-# Problem space
+# Problem space :question:
+This following sections describe the problem space of our project.
 
 ## Question zero
 *How can we design and develop software solutions to detect and react accordingly on the medical emergencies happened among the pupils during their school-to-home commute with autonomous shuttle in Bamberg?*
@@ -13,9 +14,9 @@ Carolen Albert represents parents that are occupied with their busy career who c
   <img src="doc/persona.png" width="50%">
 </p>
 
-## Solution space
+# Solution space :bulb:
 
-This following sections describe the solution space of our projects.
+This following sections describe the solution space of our project.
 
 ## Table of Contents
 - [Story Map](#story-map)
