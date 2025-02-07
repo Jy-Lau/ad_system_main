@@ -107,26 +107,37 @@ sequenceDiagram
     participant Vehicle
     participant Shuttle Operator
     participant Traffic Lights
-    participant Emergency Services
     participant Nearby Vehicles
-    participant Parent
+    participant Emergency Services
+    participant Parents
 
     Student->>Vehicle: Boards Bus
     activate Vehicle
+    Vehicle->>Vehicle: Continue with planned normal route
     Vehicle->>Vehicle: Activates Interior Monitoring
-    Vehicle->>Vehicle: Scan for distress
-    note right of Vehicle: Continuous Monitoring
+    note right of Vehicle: Continuous monitoring for distress
     alt Emergency Detected
         Vehicle->>Shuttle Operator: Report distress
-        Shuttle Operator->>Emergency Services: Alert Medical Emergency
-        Shuttle Operator->>Vehicle: Communicate emergency maneuver
-        Vehicle->>Traffic Lights: Communicate to turn signal GREEN
-        Shuttle Operator->>Emergency Services: Redirecting alert to Emergency Facility
-        Vehicle->>Nearby Vehicles: Notify Nearby Vehicles
-        Shuttle Operator->>Parent: Notify Parent
+        alt False Alarm
+            Shuttle Operator-->>Vehicle: Inform false alarm
+            Vehicle->>Vehicle: Continue with planned normal route
+        else True Alarm
+            Shuttle Operator-->>Vehicle: Inform true alarm
+            Vehicle->>Vehicle: Change route to hospital
+            Vehicle->>Traffic Lights: Communicate to turn signal GREEN
+            Vehicle->>Nearby Vehicles: Alert Medical Emergency
+            Shuttle Operator->>Emergency Services: Alert Medical Emergency
+            Shuttle Operator->>Parents: Alert Medical Emergency
+        end
     end
-    Vehicle->>Vehicle: Continue to next location
-    Vehicle->>Student: Arrive at School
+    alt Hospital route active
+        Vehicle->>Vehicle: Continue to Hospital
+        Vehicle->>Student: Arrived at Hospital
+    else Planned normal route active
+        Vehicle->>Vehicle: Continue with planned normal route
+        Vehicle->>Student: Arrived at School
+    end
+    Vehicle->>Parents: Notify Parents
     deactivate Vehicle
 ```
 
@@ -197,14 +208,12 @@ The model car starts from its initial start point, travels to the first pickup p
 
 | Role           |Responsibility          | Member |
 |----------------|------------------------|--------|
-|  **Event manager for team building activities** | Organizing events by decide the location, coordinate logistics, select engaging exercises. |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh) |
-|  ||[Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s) |
-|   | |[Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid) |
+| **Scrum master** | Break down the tasks and distribute to team members. Review the task progress of each team member during meetings to ensure they are on track.|[Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s), [Jia Yong Lau](https://git.hs-coburg.de/jia0198s) |
+| **Daily meetings notetaker** | Take note to keep track of professors' feedback during meetings and ensure easy-access for all of the team members. |[Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid), [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s) |
 | **Daily meetings timekeeper**  |Ensure every team member follow our team's meeting rules such as be on time.|[Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s) |
-| **Daily meetings notetaker** | Take note to keep track of professors' feedback during meetings|[Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s) |
-| **Team helper**|Help out other team members on technical responsibilites such as ROS2 and Python related tasks. |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B) |
+| **Team helper**| Provide technical support to other team members on ROS2 and Python related tasks. |[Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B) |
 | **Content specialist** |  Prepare ppt slides for weekly presentations and project pitch presentations. |[Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath) |
-| **Scrum master**  | Break down the tasks and distribute to team members. Review the task progress of each team member to ensure they are on track.|[Jia Yong Lau](https://git.hs-coburg.de/jia0198s) |
+| **Event manager for team building activities** | Organizing events by decide the location, coordinate logistics, select engaging exercises. |[Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh) |
 
 ## License
 
