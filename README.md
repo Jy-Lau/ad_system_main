@@ -190,14 +190,14 @@ This section covered project management related topics. It ensures that projects
 ### Use Case 1: Normal Scenario – Path to School
 The model car starts from its initial start point, travels to two pickup points, and finally reaches its destination (School). The car will follow predefined lanes, stop at traffic lights, and be aware of obstacles and other vehicles in the environment. The car will use V2X communication to interact with the traffic lights and other vehicles.
 ### Required V2X Messages (ETSI Standards):
-- **SPAT:**
-- **CAM:**
+- **SPAT:** - Signal Phasing And Timing message is used to know the current traffic signal status at intersection to make appropiate decision.
+- **CAM:** - Co-operative Awareness Message is used to know the position, orientation and speed of nearby vehicles and at a same time used to publish the host vehicle position and speed.
 
 ### Use Case 2: Medical Emergencies Scenario – Reroute to Hospital
 The model car starts from its initial start point, travels to the first pickup point. After departing from the first pickup point and on the way to the second pick up point, medical emergencies are detected and the model car is rerouted to nearby Hospital. The car will cut through the traffic to reach the destination faster, use V2X communication to control traffic light to show green and notify nearby vehicles that the car is having medical emergencies.
 ### Required V2X Messages (ETSI Standards):
 - **SPAT:**
-- **DENM:**
+- **DENM:** - Dencentralized Environmental Notification Message is used to inform the nearby vehicles to make a way to the shuttle during emergency situation.
 - **CAM:**
 
 ## Milestone
