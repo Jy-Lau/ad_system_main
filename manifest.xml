@@ -26,7 +26,7 @@
     <project name="model_city_map" path="model_city_map" remote="ad" revision="master"/>
     <project name="car_description" path="car_description" remote="ad" revision="master"/>
     <project name="v2x" path="v2x" remote="ad" revision="master"/>
-    <project name="Cohda-utils" path="Cohda-utils" remote="ad" revision="master"/>
+    <project name="Cohda-utils" path="cohda_utils" remote="ad" revision="master"/>
     <project name="mocap_msgs" path="mocap_msgs" remote="mocap" revision="main"/>
 
 </manifest>
