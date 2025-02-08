@@ -3,6 +3,7 @@
     <!-- Remote repositories -->
     <remote name="blaze" fetch="git@git.hs-coburg.de:TEAM_BLAZE" />
     <remote name="ad" fetch="git@git.hs-coburg.de:Autonomous_Driving" />
+    <remote name="mocap" fetch="git@git.hs-coburg.de:pau5849s" />
 
     <!-- Define the default branch -->
     <!-- <default revision="main" remote="blaze" /> -->
@@ -20,9 +21,11 @@
     <project name="longitudinal_control" path="longitudinal_control" remote="blaze" revision="main"/>
     <project name="v2x_transmitter" path="v2x_transmitter" remote="blaze" revision="main"/>
 
-    <!-- Autonomous Driving public repositories -->
+    <!-- Public repositories -->
     <project name="model_city_map" path="model_city_map" remote="ad" revision="master"/>
     <project name="car_description" path="car_description" remote="ad" revision="master"/>
     <project name="v2x" path="v2x" remote="ad" revision="master"/>
+    <project name="Cohda-utils" path="Cohda-utils" remote="ad" revision="master"/>
+    <project name="mocap_msgs" path="mocap_msgs" remote="mocap" revision="main"/>
 
 </manifest>
