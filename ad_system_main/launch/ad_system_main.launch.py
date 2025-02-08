@@ -16,7 +16,7 @@ def generate_launch_description():
     #     description='Task parameter to set the task'
     # )
     package_names = ["interior_monitoring","lane_detection","localization_pkg","v2x_receiver","environment_model","global_planning","behavior_planning","local_planning","lateral_control","longitudinal_control","v2x_transmitter"]
-    node_names = ["interior_monitoring_node","lane_detection_node","localization_node","v2x_receiver_node","environment_node","global_planner","behavior_planner","local_planner","lateral_control","longitudinal_control","v2x_transmitter_node"]
+    node_names = ["interior_monitoring_node","lane_detection_node","localization_node","v2x_receiver","environment_node","global_planner","behavior_planner","local_planner","lateral_control","longitudinal_control","v2x_transmitter"]
     nodes = []
     handlers = []
 
