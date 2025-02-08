@@ -9,6 +9,7 @@
     <!-- <default revision="main" remote="blaze" /> -->
 
     <!-- Team Blaze repositories -->
+    <project name="ad_system_main" path="ad_system_main" remote="blaze" revision="main"/>
     <project name="interior_monitoring" path="interior_monitoring" remote="blaze" revision="main"/>
     <project name="lane_detection" path="lane_detection" remote="blaze" revision="main"/>
     <project name="localization" path="localization" remote="blaze" revision="main"/>
