@@ -152,18 +152,11 @@ This section provide guidance on how to setup our ROS2 software. By using [repo]
 repo init -u git@git.hs-coburg.de:TEAM_BLAZE/ad_system_main.git -b main -m manifest.xml
 repo sync
 ```
-3. Go to localization package, clone the mocap_msgs repositories specified in .gitmodules
-```bash
-cd localization
-git submodule init
-git submodule update
-cd ..
-```
-4. Build the package:
+3. Build the package:
 ```bash
  colcon build
 ```
-5. Source the workspace:
+4. Source the workspace:
 ```bash
  source install/setup.bash
 ```
@@ -205,7 +198,6 @@ The model car starts from its initial start point, travels to the first pickup p
 ### Required V2X Messages (ETSI Standards):
 - **SPAT:**
 - **DENM:**
-- **SRM, SSM:**
 - **CAM:**
 
 ## Milestone
