@@ -33,8 +33,8 @@ Story map is a visual tool used in agile development to organize product require
 This section consists of the technical specifications of our product. [Block diagram](#block-diagram) describes the high level layered architecture of our ROS2 product, and within each layer of *Sense, Plan, Act* we have 11 independent submodules work together. There are three Behavioral UML diagrams related to our system architecture are described below: [State Diagram](#state-diagram), [Activity Diagram](#activity-diagram) and [Sequence Diagram](#sequence-diagram).
 
 ## Block diagram
-At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: *Sense*, *Plan*, and *Act*. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs. Meanwhile, **<span style="color:#3955a3;">blue-colored modules</span>** represent the key components that our team is responsible for delivering.  
-⚠️ *Note: This diagram is subject to change based on evolving project deliverables.*
+At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: **<span style="color:#00b050;">Sense</span>**,  **<span style="color:#00b050;">Plan</span>**, and **<span style="color:#00b050;">Act</span>**. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs. Meanwhile, **<span style="color:#3955a3;">blue-colored modules</span>** represent the key components that our team is responsible for delivering.
+:warning: *Note: This diagram is subject to change in the future based on evolving project deliverables.*
 ![Block Diagram](doc/block_diagram.png)
 
 ### Component responsibilities
@@ -189,13 +189,15 @@ This section covered project management related topics. It ensures that projects
 ### Use Case 1: Normal Scenario – Path to School
 The model car starts from its initial start point, travels to two pickup points, and finally reaches its destination (School). The car will follow predefined lanes, stop at traffic lights, and be aware of obstacles and other vehicles in the environment. The car will use V2X communication to interact with the traffic lights and other vehicles.
 ### Required V2X Messages (ETSI Standards):
-- **SPAT:** - Signal Phasing And Timing message is used to know the current traffic signal status at intersection to make appropiate decision.
-- **CAM:** - Co-operative Awareness Message is used to know the position, orientation and speed of nearby vehicles and at a same time used to publish the host vehicle position and speed.
+- **SPAT:** - **Signal Phasing And Timing message** is used to know the current traffic signal status at intersection to make appropiate decision.
+- **CAM:** - **Co-operative Awareness Message** is used to know the position, orientation and speed of nearby vehicles and at a same time used to publish the ego-vehicle position and speed.
 
 ### Use Case 2: Medical Emergencies Scenario – Reroute to Hospital
-The model car starts from its initial start point, travels to the first pickup point. After departing from the first pickup point and on the way to the second pick up point, medical emergencies are detected and the model car is rerouted to nearby Hospital. The car will cut through the traffic to reach the destination faster, use V2X communication to control traffic light to show green and notify nearby vehicles that the car is having medical emergencies.
+The model car starts from its initial start point, travels to the first pickup point. After departing from either the first pickup point or the second pick up point, medical emergencies are detected and the model car is rerouted to nearby Hospital. The car will cut through the traffic to reach the destination faster, use V2X communication to control traffic light to show green and notify nearby vehicles that the car is having medical emergencies.
 ### Required V2X Messages (ETSI Standards):
-- **DENM:** - Dencentralized Environmental Notification Message is used to inform the nearby vehicles to make a way to the shuttle during emergency situation.
+- **SPAT:** - *(As mentioned above)*
+- **CAM:** - *(As mentioned above)*
+- **DENM:** - **Dencentralized Environmental Notification Message** is used to inform the nearby vehicles to make a way during emergency situation happened on the ego-vehicle.
 
 ## Milestone
 ![Milestone](doc/milestone.png)
