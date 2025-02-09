@@ -155,12 +155,15 @@ repo init -u git@git.hs-coburg.de:TEAM_BLAZE/ad_system_main.git -b main -m manif
 repo sync
 ```
 :warning: *Note: Users do not need to run ```git submodule init``` and ```git submodule update``` for repositories containing *.gitmodules* because ```repo sync``` automatically handles submodule initialization and updates based on the [manifest.xml](./manifest.xml). This ensures all dependencies are fetched correctly without manual intervention.*
-
-3. Build the package:
+3. Install python dependencies:
+```bash
+pip3 install -r requirements.txt
+```
+4. Build the package:
 ```bash
  colcon build
 ```
-4. Source the workspace:
+5. Source the workspace:
 ```bash
  source install/setup.bash
 ```

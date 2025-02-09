@@ -1,0 +1,3 @@
+numpy==1.26.4
+cv-bridge==3.2.1
+opencv-python==4.11.0.86
