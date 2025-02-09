@@ -149,21 +149,26 @@ This section provide guidance on how to setup our ROS2 software. By using [repo]
 ```bash
  git clone https://git.hs-coburg.de/TEAM_BLAZE/ad_system_main.git
 ```
-2. Clone all of the relevant sub-repositories using repo tools:
+2. Install repo tool, details of installation please refer to this [website](https://gerrit.googlesource.com/git-repo):
+```bash
+ sudo apt update
+ sudo apt install repo
+```
+3. Clone all of the relevant sub-repositories using repo tools:
 ```bash
 repo init -u git@git.hs-coburg.de:TEAM_BLAZE/ad_system_main.git -b main -m manifest.xml
 repo sync
 ```
 :warning: *Note: Users do not need to run ```git submodule init``` and ```git submodule update``` for repositories containing *.gitmodules* because ```repo sync``` automatically handles submodule initialization and updates based on the [manifest.xml](./manifest.xml). This ensures all dependencies are fetched correctly without manual intervention.*
-3. Install python dependencies:
+4. Install python dependencies:
 ```bash
 pip3 install -r requirements.txt
 ```
-4. Build the package:
+5. Build the package:
 ```bash
  colcon build
 ```
-5. Source the workspace:
+6. Source the workspace:
 ```bash
  source install/setup.bash
 ```
