@@ -154,12 +154,14 @@ This section provide guidance on how to setup our ROS2 software. By using [repo]
  sudo apt update
  sudo apt install repo
 ```
-3. Clone all of the relevant sub-repositories using repo tools:
+3. Clone all of the relevant sub-repositories using repo tools (:warning: *Only ssh clone is allowed instead of https, please setup ssh at your PC and git server*):
+
 ```bash
 repo init -u git@git.hs-coburg.de:TEAM_BLAZE/ad_system_main.git -b main -m manifest.xml
 repo sync
 ```
 :warning: *Note: Users do not need to run ```git submodule init``` and ```git submodule update``` for repositories containing *.gitmodules* because ```repo sync``` automatically handles submodule initialization and updates based on the [manifest.xml](./manifest.xml). This ensures all dependencies are fetched correctly without manual intervention.*
+
 4. Install python dependencies:
 ```bash
 pip3 install -r requirements.txt
