@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'ad_system_main'
 
@@ -10,11 +12,12 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='jylau810',
-    maintainer_email='jylau810@gmail.com',
+    maintainer='jia0198s',
+    maintainer_email='Jia-Yong.Lau@stud.hs-coburg.de',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],

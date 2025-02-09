@@ -4,7 +4,7 @@
   <name>ad_system_main</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="jylau810@gmail.com">jylau810</maintainer>
+  <maintainer email="Jia-Yong.Lau@stud.hs-coburg.de">jia0198s</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>
