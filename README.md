@@ -34,6 +34,7 @@ This section consists of the technical specifications of our product. [Block dia
 
 ## Block diagram
 At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: **<span style="color:#00b050;">Sense</span>**,  **<span style="color:#00b050;">Plan</span>**, and **<span style="color:#00b050;">Act</span>**. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs. Meanwhile, **<span style="color:#3955a3;">blue-colored modules</span>** represent the key components that our team is responsible for delivering.
+
 :warning: *Note: This diagram is subject to change in the future based on evolving project deliverables.*
 ![Block Diagram](doc/block_diagram.png)
 
@@ -151,6 +152,8 @@ This section provide guidance on how to setup our ROS2 software. By using [repo]
 repo init -u git@git.hs-coburg.de:TEAM_BLAZE/ad_system_main.git -b main -m manifest.xml
 repo sync
 ```
+:warning: *Note: Users do not need to run ```git submodule init``` and ```git submodule update``` for repositories containing *.gitmodules* because ```repo sync``` automatically handles submodule initialization and updates based on the [manifest.xml](./manifest.xml). This ensures all dependencies are fetched correctly without manual intervention.*
+
 3. Build the package:
 ```bash
  colcon build
