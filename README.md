@@ -114,6 +114,7 @@ sequenceDiagram
     Student->>Vehicle: Boards Bus
     activate Vehicle
     Vehicle->>Vehicle: Continue with planned normal route
+    Traffic Lights->>Vehicle: Subscribe SPAT to get traffic signal info
     Vehicle->>Vehicle: Activates Interior Monitoring
     note right of Vehicle: Continuous monitoring for distress
     alt Emergency Detected
@@ -124,10 +125,11 @@ sequenceDiagram
         else True Alarm
             Shuttle Operator-->>Vehicle: Inform true alarm
             Vehicle->>Vehicle: Change route to hospital
-            Vehicle->>Traffic Lights: Communicate to turn signal GREEN
-            Vehicle->>Nearby Vehicles: Alert Medical Emergency
-            Shuttle Operator->>Emergency Services: Alert Medical Emergency
-            Shuttle Operator->>Parents: Alert Medical Emergency
+            Vehicle->>Traffic Lights: Send SRM message to turn traffic signal GREEN
+            Traffic Lights-->>Vehicle: Respond with SSM message to the ego-vehicle
+            Vehicle->>Nearby Vehicles: Send DENM to alert medical emergency and CAM to notify the position of ego-vehicle
+            Shuttle Operator->>Emergency Services: Alert medical emergency by predefined communication method
+            Shuttle Operator->>Parents: Alert medical emergency by predefined communication method
         end
     end
     alt Hospital route active
