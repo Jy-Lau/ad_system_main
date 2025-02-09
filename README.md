@@ -27,16 +27,15 @@ This following sections describe the solution space of our project, whereby each
 
 ## Story Map
 Story map is a visual tool used in agile development to organize product requirements based on real-world user experiences. It helps teams break down the product journey into goals, epics, and user stories, ensuring a clear structure for development.
-<p>
-  <img src="doc/story_map.png" width="100%">
-</p>
+![Story Map](doc/story_map.png)
 
 ## System Architecture
 This section consists of the technical specifications of our product. [Block diagram](#block-diagram) describes the high level layered architecture of our ROS2 product, and within each layer of *Sense, Plan, Act* we have 11 independent submodules work together. There are three Behavioral UML diagrams related to our system architecture are described below: [State Diagram](#state-diagram), [Activity Diagram](#activity-diagram) and [Sequence Diagram](#sequence-diagram).
 
 ## Block diagram
-
-![Alt Text](doc/block_diagram.png)
+At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: *Sense*, *Plan*, and *Act*. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs. Meanwhile, **<span style="color:#3955a3;">blue-colored modules</span>** represent the key components that our team is responsible for delivering.  
+⚠️ *Note: This diagram is subject to change based on evolving project deliverables.*
+![Block Diagram](doc/block_diagram.png)
 
 ### Component responsibilities
 | **Package Name**       | **Link**                  |**Contributor**|
@@ -46,10 +45,10 @@ This section consists of the technical specifications of our product. [Block dia
 | `localization` | https://git.hs-coburg.de/TEAM_BLAZE/localization                 |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 | `v2x_receiver` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver                 |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 | `environment_model` | https://git.hs-coburg.de/TEAM_BLAZE/environment_model       |  [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s)
-| `global_planning` | https://git.hs-coburg.de/TEAM_BLAZE/global_planning|          |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning|      |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
-| `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning|            |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `lateral_control` | https://git.hs-coburg.de/TEAM_BLAZE/lateral_control|          |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
+| `global_planning` | https://git.hs-coburg.de/TEAM_BLAZE/global_planning           |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning       |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
+| `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning             |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `lateral_control` | https://git.hs-coburg.de/TEAM_BLAZE/lateral_control           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `longitudinal_control` | https://git.hs-coburg.de/TEAM_BLAZE/longitudinal_control |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 
@@ -199,7 +198,7 @@ The model car starts from its initial start point, travels to the first pickup p
 - **DENM:** - Dencentralized Environmental Notification Message is used to inform the nearby vehicles to make a way to the shuttle during emergency situation.
 
 ## Milestone
-![Alt Text](doc/milestone.png)
+![Milestone](doc/milestone.png)
 
 ## Team roles and responsibilities
 
