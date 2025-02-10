@@ -220,7 +220,7 @@ This section covered project management related topics. It ensures that projects
 ### Use Case 1: Normal Scenario – Path to School
 The model car starts from its initial start point, travels to two pickup points, and finally reaches its destination (School). The car will follow predefined lanes, stop at traffic lights, and be aware of obstacles and other vehicles in the environment. The car will use V2X communication to interact with the traffic lights and other vehicles.
 ### Required V2X Messages (ETSI Standards):
-- **SPAT:** - **Signal Phasing And Timing message** is used to know the current traffic signal status at intersection to make appropiate decision.
+- **SPAT:** - **Signal Phasing And Timing message** is sent by traffic signal system to the ego-vehicle to know the current traffic signal status at intersection to make appropiate decision.
 - **CAM:** - **Co-operative Awareness Message** is used to know the position, orientation and speed of nearby vehicles and at a same time used to publish the ego-vehicle position and speed.
 
 ### Use Case 2: Medical Emergencies Scenario – Reroute to Hospital
@@ -229,6 +229,8 @@ The model car starts from its initial start point, travels to the first pickup p
 - **SPAT:** - *(As mentioned above)*
 - **CAM:** - *(As mentioned above)*
 - **DENM:** - **Dencentralized Environmental Notification Message** is used to inform the nearby vehicles to make a way during emergency situation happened on the ego-vehicle.
+- **SRM:** - **Signal Request Message** is sent by the ego-vehicle to traffic signal system to request a green light for priority passage through an intersection.
+- **SSM:** - **Signal Status Message** is sent by the traffic signal system in response to SRM, including whether the requested priority is granted, and provides information on signal timing adjustments.
 
 ## Milestone
 ![Milestone](doc/milestone.png)
