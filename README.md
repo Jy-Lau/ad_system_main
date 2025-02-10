@@ -103,7 +103,6 @@ flowchart TD
 ## Sequence Diagram
 ```mermaid
 sequenceDiagram
-    participant Student
     participant Vehicle
     participant Shuttle Operator
     participant Traffic Lights
@@ -111,36 +110,53 @@ sequenceDiagram
     participant Emergency Services
     participant Parents
 
-    Student->>Vehicle: Boards Bus
+    activate Shuttle Operator
+    Shuttle Operator->>Vehicle: Activate vehicle to begin operation
     activate Vehicle
+    Vehicle-->> Shuttle Operator: Report operation begins
     Vehicle->>Vehicle: Continue with planned normal route
-    Traffic Lights->>Vehicle: Subscribe SPAT to get traffic signal info
+    Vehicle-->>Nearby Vehicles: CAM
+    activate Nearby Vehicles
+    Nearby Vehicles-->>Vehicle: CAM
+    deactivate Nearby Vehicles
+    activate Traffic Lights
+    Traffic Lights-->>Vehicle: SPAT
+    deactivate Traffic Lights
     Vehicle->>Vehicle: Activates Interior Monitoring
     note right of Vehicle: Continuous monitoring for distress
     alt Emergency Detected
         Vehicle->>Shuttle Operator: Report distress
         alt False Alarm
-            Shuttle Operator-->>Vehicle: Inform false alarm
+            Shuttle Operator-->>Vehicle: Report false alarm
             Vehicle->>Vehicle: Continue with planned normal route
         else True Alarm
-            Shuttle Operator-->>Vehicle: Inform true alarm
+            Shuttle Operator-->>Vehicle: Report true alarm
             Vehicle->>Vehicle: Change route to hospital
-            Vehicle->>Traffic Lights: Send SRM message to turn traffic signal GREEN
-            Traffic Lights-->>Vehicle: Respond with SSM message to the ego-vehicle
-            Vehicle->>Nearby Vehicles: Send DENM to alert medical emergency and CAM to notify the position of ego-vehicle
-            Shuttle Operator->>Emergency Services: Alert medical emergency by predefined communication method
-            Shuttle Operator->>Parents: Alert medical emergency by predefined communication method
+            Vehicle->>Traffic Lights: SRM
+            activate Traffic Lights
+            Traffic Lights-->>Vehicle: SSM
+            deactivate Traffic Lights
+            Vehicle-->>Nearby Vehicles: DENM
+            activate Nearby Vehicles
+            deactivate Nearby Vehicles
+            Shuttle Operator-->>Emergency Services: Alert medical emergency
+            activate Emergency Services
+            deactivate Emergency Services
+            Shuttle Operator-->>Parents: Alert medical emergency
+            activate Parents
+            deactivate Parents
         end
     end
     alt Hospital route active
         Vehicle->>Vehicle: Continue to Hospital
-        Vehicle->>Student: Arrived at Hospital
     else Planned normal route active
         Vehicle->>Vehicle: Continue with planned normal route
-        Vehicle->>Student: Arrived at School
     end
-    Vehicle->>Parents: Notify Parents
+    Vehicle->>Parents: Notification
+    activate Parents
+    deactivate Parents
     deactivate Vehicle
+    deactivate Shuttle Operator
 ```
 
 ## Installation
