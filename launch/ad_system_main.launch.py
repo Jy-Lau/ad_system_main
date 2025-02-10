@@ -10,8 +10,8 @@ def generate_launch_description():
     #     default_value='a',
     #     description='Task parameter to set the task'
     # )
-    package_names = ["interior_monitoring","lane_detection","localization_pkg","v2x_receiver","environment_model","global_planning","behavior_planning","local_planning","lateral_control","longitudinal_control","v2x_transmitter"]
-    node_names = ["interior_monitoring","lane_detection_node","localization_node","v2x_receiver","environment_node","global_planner","behavior_planner","local_planner","lateral_control","longitudinal_control","v2x_transmitter"]
+    package_names = ["interior_monitoring","lane_detection","localization_pkg","v2x_receiver","environmental_model","global_planning","behavior_planning","local_planning","lateral_control","v2x_transmitter"]
+    node_names = ["interior_monitoring","lane_detection_node","localization_node","v2x_receiver","environment_node","global_planner","behavior_planner","local_planner","lateral_control","v2x_transmitter"]
 
     if len(package_names) != len(node_names):
         print("Error: The lengths of package_names and node_names are not the same!")
