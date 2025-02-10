@@ -42,9 +42,9 @@ repositories:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/v2x_transmitter.git
     version: main
-  custom_msgs:
+  custom_msg:
     type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/custom_msgs.git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/custom_msg.git
     version: main
 
   # =============================
