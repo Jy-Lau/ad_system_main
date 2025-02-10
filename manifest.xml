@@ -4,6 +4,7 @@
     <remote name="blaze" fetch="git@git.hs-coburg.de:TEAM_BLAZE" />
     <remote name="ad" fetch="git@git.hs-coburg.de:Autonomous_Driving" />
     <remote name="mocap" fetch="git@git.hs-coburg.de:pau5849s" />
+    <remote name="ackermann" fetch="git@github.com:ros-drivers" />
 
     <!-- Define the default branch -->
     <!-- <default revision="main" remote="blaze" /> -->
@@ -19,7 +20,6 @@
     <project name="behavior_planning" path="behavior_planning" remote="blaze" revision="main"/>
     <project name="local_planning" path="local_planning" remote="blaze" revision="main"/>
     <project name="lateral_control" path="lateral_control" remote="blaze" revision="main"/>
-    <project name="longitudinal_control" path="longitudinal_control" remote="blaze" revision="main"/>
     <project name="v2x_transmitter" path="v2x_transmitter" remote="blaze" revision="main"/>
 
     <!-- Public repositories -->
@@ -28,5 +28,6 @@
     <project name="v2x" path="v2x" remote="ad" revision="master"/>
     <project name="Cohda-utils" path="v2x_receiver/cohda_utils" remote="ad" revision="master"/>
     <project name="mocap_msgs" path="mocap_msgs" remote="mocap" revision="main"/>
+    <project name="ackermann_msgs" path="ackermann_msgs" remote="ackermann" revision="ros2"/>
 
 </manifest>
