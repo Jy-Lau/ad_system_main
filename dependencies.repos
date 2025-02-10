@@ -1,0 +1,80 @@
+repositories:
+  # ========================
+  # Team Blaze repositories
+  # ========================
+  interior_monitoring:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/interior_monitoring.git
+    version: main
+  lane_detection:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/lane_detection.git
+    version: main
+  localization:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/localization.git
+    version: main
+  v2x_receiver:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/v2x_receiver.git
+    version: main
+  environment_model:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/environment_model.git
+    version: main
+  global_planning:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/global_planning.git
+    version: main
+  behavior_planning:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/behavior_planning.git
+    version: main
+  local_planning:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/local_planning.git
+    version: main
+  lateral_control:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/lateral_control.git
+    version: main
+  v2x_transmitter:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/v2x_transmitter.git
+    version: main
+  custom_msgs:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/custom_msgs.git
+    version: main
+
+  # =============================
+  # Autonomous Driving repositories
+  # =============================
+  model_city_map:
+    type: git
+    url: git@git.hs-coburg.de:Autonomous_Driving/model_city_map.git
+    version: master
+  car_description:
+    type: git
+    url: git@git.hs-coburg.de:Autonomous_Driving/car_description.git
+    version: master
+  v2x:
+    type: git
+    url: git@git.hs-coburg.de:Autonomous_Driving/v2x.git
+    version: master
+  v2x_receiver/cohda_utils:
+    type: git
+    url: git@git.hs-coburg.de:Autonomous_Driving/Cohda-utils.git
+    version: master
+
+  # ====================
+  # Public repositories
+  # ====================
+  mocap_msgs:
+    type: git
+    url: git@git.hs-coburg.de:pau5849s/mocap_msgs.git
+    version: main
+  ackermann_msgs:
+    type: git
+    url: git@github.com:ros-drivers/ackermann_msgs.git
+    version: ros2
