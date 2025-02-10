@@ -38,6 +38,9 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 :warning: *Note: This diagram is subject to change in the future based on evolving project deliverables.*
 ![Block Diagram](doc/block_diagram.png)
 
+### rqt graph
+![rqt graph](doc/rosgraph.png)
+
 ### Component responsibilities
 | **Package Name**       | **Link**                  |**Contributor**|
 |------------------------|---------------------------|---------|
