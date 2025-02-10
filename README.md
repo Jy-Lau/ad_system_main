@@ -50,7 +50,6 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 | `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning       |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
 | `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning             |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
 | `lateral_control` | https://git.hs-coburg.de/TEAM_BLAZE/lateral_control           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
-| `longitudinal_control` | https://git.hs-coburg.de/TEAM_BLAZE/longitudinal_control |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 
 ## State Diagram
