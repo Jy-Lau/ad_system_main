@@ -66,6 +66,10 @@ repositories:
     type: git
     url: git@git.hs-coburg.de:Autonomous_Driving/Cohda-utils.git
     version: master
+  cam_publisher:
+    type: git
+    url: git@git.hs-coburg.de:Autonomous_Driving/cam_publisher.git
+    version: master
 
   # ====================
   # Public repositories
