@@ -34,9 +34,9 @@ repositories:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/local_planning.git
     version: main
-  lateral_control:
+  control:
     type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/lateral_control.git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/control.git
     version: main
   v2x_transmitter:
     type: git
