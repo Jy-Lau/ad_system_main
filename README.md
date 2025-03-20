@@ -38,9 +38,6 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 :warning: *Note: This diagram is subject to change in the future based on evolving project deliverables.*
 ![Block Diagram](doc/block_diagram.png)
 
-### rqt graph
-![rqt graph](doc/rosgraph.png)
-
 ### Component responsibilities
 | **Package Name**       | **Link**                  |**Contributor**|
 |------------------------|---------------------------|---------|
@@ -52,7 +49,7 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 | `global_planning` | https://git.hs-coburg.de/TEAM_BLAZE/global_planning           |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
 | `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning       |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
 | `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning             |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `lateral_control` | https://git.hs-coburg.de/TEAM_BLAZE/lateral_control           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
+| `control` | https://git.hs-coburg.de/TEAM_BLAZE/control                           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 
 ## State Diagram
@@ -196,6 +193,8 @@ To launch all of the nodes in ad system main package, run the following command:
 ```bash
 ros2 launch ad_system_main ad_system_main.launch.py
 ```
+### rqt graph
+![rqt graph](doc/rosgraph.png)
 
 ## Testing
 This section provide guidance on how to perform integration test of all of our submodules in our ROS2 software.
