@@ -6,33 +6,21 @@ repositories:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/interior_monitoring.git
     version: main
-  lane_detection:
-    type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/lane_detection.git
-    version: main
   localization:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/localization.git
+    version: main
+  lane_detection:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/lane_detection.git
     version: main
   v2x_receiver:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/v2x_receiver.git
     version: main
-  environment_model:
+  path_planning:
     type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/environment_model.git
-    version: main
-  global_planning:
-    type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/global_planning.git
-    version: main
-  behavior_planning:
-    type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/behavior_planning.git
-    version: main
-  local_planning:
-    type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/local_planning.git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/path_planning.git
     version: main
   control:
     type: git

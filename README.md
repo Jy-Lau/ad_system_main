@@ -26,8 +26,7 @@ This following sections describe the solution space of our project, whereby each
 - [License](#license)
 
 ## Story Map
-Story map is a visual tool used in agile development to organize product requirements based on real-world user experiences. It helps teams break down the product journey into goals, epics, and user stories, ensuring a clear structure for development.
-![Story Map](doc/story_map.png)
+Story map is a visual tool used in agile development to organize product requirements based on real-world user experiences. It helps teams break down the product journey into goals, epics, and user stories, ensuring a clear structure for development. Refer to our [User stories with acceptance criterias](https://miro.com/app/board/uXjVIOz0vok=/?share_link_id=392363966377)
 
 ## System Architecture
 This section consists of the technical specifications of our product. [Block diagram](#block-diagram) describes the high level layered architecture of our ROS2 product, and within each layer of *Sense, Plan, Act* we have 11 independent submodules work together. There are three Behavioral UML diagrams related to our system architecture are described below: [State Diagram](#state-diagram), [Activity Diagram](#activity-diagram) and [Sequence Diagram](#sequence-diagram).
@@ -41,18 +40,18 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 ### Component responsibilities
 | **Package Name**       | **Link**                  |**Contributor**|
 |------------------------|---------------------------|---------|
-| `interior_monitoring` | https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring   |  [Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh)
+| `interior_monitoring` | https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring   |  [Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s), [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `lane_detection` | https://git.hs-coburg.de/TEAM_BLAZE/lane_detection             |  [Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s)
+| `decision_core` | https://git.hs-coburg.de/TEAM_BLAZE/decision_core               |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
 | `localization` | https://git.hs-coburg.de/TEAM_BLAZE/localization                 |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 | `v2x_receiver` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver                 |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
-| `environment_model` | https://git.hs-coburg.de/TEAM_BLAZE/environment_model       |  [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s)
-| `global_planning` | https://git.hs-coburg.de/TEAM_BLAZE/global_planning           |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `behavior_planning` | https://git.hs-coburg.de/TEAM_BLAZE/behavior_planning       |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
-| `local_planning` | https://git.hs-coburg.de/TEAM_BLAZE/local_planning             |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `path_planning` | https://git.hs-coburg.de/TEAM_BLAZE/path_planning               |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
 | `control` | https://git.hs-coburg.de/TEAM_BLAZE/control                           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
+| `vehicle_visualizer` | https://git.hs-coburg.de/TEAM_BLAZE/Vehicle_Visualizer     |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 
 ## State Diagram
+This state diagram shows the different operational states of an autonomous shuttle. It starts in the Idle state and transitions to Driving when users board. Upon reaching a destination, it enters a Wait state. If at school, the shuttle ends its route. During Driving, a confirmed medical emergency shifts the shuttle to an Emergency state, after which it proceeds to the hospital (End). The diagram captures both normal and emergency flow scenarios.
 ```mermaid
 stateDiagram-v2
 direction LR
@@ -67,6 +66,7 @@ direction LR
 ```
 ## Activity Diagram
 ### Activity 1: Medical Emergencies detected while driving
+This activity diagram outlines the steps taken when a medical emergency is detected while driving. The AI system identifies distress, notifies the operator, and the operator validates the situation. If it’s a true emergency, the shuttle reroutes to a hospital and sends alerts to medical services and parents. If it’s a false alarm, normal operations resume.
 ```mermaid
 flowchart TD
 
@@ -84,6 +84,7 @@ flowchart TD
     class 0,8 circle;
 ```
 ### Activity 2: Normal scenario without medical emergencies detected while driving
+This diagram shows the typical pick-up and drop-off process without emergencies. The shuttle moves to pick-up points, allows users to board, checks for remaining pupils, and proceeds to the school once all users are collected. It loops until all pick-ups are complete.
 ```mermaid
 flowchart TD
 
@@ -100,6 +101,7 @@ flowchart TD
 ```
 
 ## Sequence Diagram
+This sequence diagram illustrates the communication between a Shuttle Operator, Vehicle, Traffic Lights, Nearby Vehicles, Emergency Services, and Parents during the operation of an autonomous shuttle. It captures both normal driving behavior and emergency response scenarios, such as detecting passenger distress, verifying if it’s a false or true alarm, rerouting to a hospital if needed, and notifying relevant parties. Messages like CAM, SPATEM, SRM, and DENM initiate specific system reactions in accordance with vehicular communication standards.
 ```mermaid
 sequenceDiagram
     participant Vehicle
@@ -110,48 +112,48 @@ sequenceDiagram
     participant Parents
 
     activate Shuttle Operator
-    Shuttle Operator->>Vehicle: Activate vehicle to begin operation
+    Shuttle Operator->>Vehicle: startOperation()
     activate Vehicle
-    Vehicle-->> Shuttle Operator: Report operation begins
-    Vehicle->>Vehicle: Continue with planned normal route
-    Vehicle-->>Nearby Vehicles: CAM
+    Vehicle-->> Shuttle Operator: operationStarted()
+    Vehicle->>Vehicle: startNormalRoute()
+    Vehicle->>Nearby Vehicles: CAM
     activate Nearby Vehicles
-    Nearby Vehicles-->>Vehicle: CAM
+    Nearby Vehicles->>Vehicle: CAM
     deactivate Nearby Vehicles
     activate Traffic Lights
-    Traffic Lights-->>Vehicle: SPAT
+    Traffic Lights->>Vehicle: SPAT
     deactivate Traffic Lights
-    Vehicle->>Vehicle: Activates Interior Monitoring
+    Vehicle->>Vehicle: startInteriorMonitoring()
     note right of Vehicle: Continuous monitoring for distress
-    alt Emergency Detected
-        Vehicle->>Shuttle Operator: Report distress
+    alt emergencyDetected()
+        Vehicle->>Shuttle Operator: distressDetected()
         alt False Alarm
-            Shuttle Operator-->>Vehicle: Report false alarm
-            Vehicle->>Vehicle: Continue with planned normal route
+            Shuttle Operator-->>Vehicle: return(falseAlarm)
+            Vehicle->>Vehicle: continueNormalRoute()
         else True Alarm
-            Shuttle Operator-->>Vehicle: Report true alarm
-            Vehicle->>Vehicle: Change route to hospital
+            Shuttle Operator-->>Vehicle: return(trueAlarm)
+            Vehicle->>Vehicle: rerouteToHospital()
             Vehicle->>Traffic Lights: SRM
             activate Traffic Lights
             Traffic Lights-->>Vehicle: SSM
             deactivate Traffic Lights
-            Vehicle-->>Nearby Vehicles: DENM
+            Vehicle->>Nearby Vehicles: DENM
             activate Nearby Vehicles
             deactivate Nearby Vehicles
-            Shuttle Operator-->>Emergency Services: Alert medical emergency
+            Shuttle Operator->>Emergency Services: alertMedicalEmergency()
             activate Emergency Services
             deactivate Emergency Services
-            Shuttle Operator-->>Parents: Alert medical emergency
+            Shuttle Operator->>Parents: alertMedicalEmergency()
             activate Parents
             deactivate Parents
         end
     end
-    alt Hospital route active
-        Vehicle->>Vehicle: Continue to Hospital
-    else Planned normal route active
-        Vehicle->>Vehicle: Continue with planned normal route
+    alt isHospitalRouteActive()
+        Vehicle->>Vehicle: continueToHospital()
+    else
+        Vehicle->>Vehicle: continueNormalRoute()
     end
-    Vehicle->>Parents: Notification
+    Vehicle->>Parents: notifyStatus()
     activate Parents
     deactivate Parents
     deactivate Vehicle
@@ -193,8 +195,6 @@ To launch all of the nodes in ad system main package, run the following command:
 ```bash
 ros2 launch ad_system_main ad_system_main.launch.py
 ```
-### rqt graph
-![rqt graph](doc/rosgraph.png)
 
 ## Testing
 This section provide guidance on how to perform integration test of all of our submodules in our ROS2 software.
