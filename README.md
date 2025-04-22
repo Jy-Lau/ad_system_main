@@ -40,13 +40,15 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 ### Component responsibilities
 | **Package Name**       | **Link**                  |**Contributor**|
 |------------------------|---------------------------|---------|
-| `interior_monitoring` | https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring   |  [Sandesh Ravikumar Kulkarni](https://git.hs-coburg.de/Sandesh)
+| `interior_monitoring` | https://git.hs-coburg.de/TEAM_BLAZE/interior_monitoring   |  [Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s), [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `lane_detection` | https://git.hs-coburg.de/TEAM_BLAZE/lane_detection             |  [Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s)
+| `decision_core` | https://git.hs-coburg.de/TEAM_BLAZE/decision_core               |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
 | `localization` | https://git.hs-coburg.de/TEAM_BLAZE/localization                 |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 | `v2x_receiver` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver                 |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
 | `path_planning` | https://git.hs-coburg.de/TEAM_BLAZE/path_planning               |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
 | `control` | https://git.hs-coburg.de/TEAM_BLAZE/control                           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
+| `vehicle_visualizer` | https://git.hs-coburg.de/TEAM_BLAZE/Vehicle_Visualizer     |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 
 ## State Diagram
 This state diagram shows the different operational states of an autonomous shuttle. It starts in the Idle state and transitions to Driving when users board. Upon reaching a destination, it enters a Wait state. If at school, the shuttle ends its route. During Driving, a confirmed medical emergency shifts the shuttle to an Emergency state, after which it proceeds to the hospital (End). The diagram captures both normal and emergency flow scenarios.
@@ -193,8 +195,6 @@ To launch all of the nodes in ad system main package, run the following command:
 ```bash
 ros2 launch ad_system_main ad_system_main.launch.py
 ```
-### rqt graph
-![rqt graph](doc/rosgraph.png)
 
 ## Testing
 This section provide guidance on how to perform integration test of all of our submodules in our ROS2 software.
