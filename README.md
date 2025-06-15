@@ -32,7 +32,7 @@ Story map is a visual tool used in agile development to organize product require
 This section consists of the technical specifications of our product. [Block diagram](#block-diagram) describes the high level layered architecture of our ROS2 product, and within each layer of *Sense, Plan, Act* we have 11 independent submodules work together. There are three Behavioral UML diagrams related to our system architecture are described below: [State Diagram](#state-diagram), [Activity Diagram](#activity-diagram) and [Sequence Diagram](#sequence-diagram).
 
 ## Block diagram
-At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: **<span style="color:#00b050;">Sense</span>**,  **<span style="color:#00b050;">Plan</span>**, and **<span style="color:#00b050;">Act</span>**. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs. Meanwhile, **<span style="color:#3955a3;">blue-colored modules</span>** represent the key components that our team is responsible for delivering.
+At the topmost hierarchy of our architecture, our system adopts a layered architecture structured into three main layers: **<span style="color:#336699;">Sense</span>**,  **<span style="color:#FFA500;">Plan</span>**, and **<span style="color:#FFFF00;">Act</span>**. Within each layer, we employed a loose coupling component-based architecture, whereby all components can be interchangeable and independent of each other. Each individual component is independent to handle specific tasks and only communicates with each other using publisher/subscriber model and possible other communication methods such as service request and response within ROS2. Modules **<span style="color:#7f7f7f;">color-coded in grey</span>** fall under the **External Input and Output** categories, meaning they are not part of our project deliverables—we simply utilize them to receive inputs and send outputs.
 
 :warning: *Note: This diagram is subject to change in the future based on evolving project deliverables.*
 ![Block Diagram](doc/block_diagram.png)
@@ -45,34 +45,39 @@ At the topmost hierarchy of our architecture, our system adopts a layered archit
 | `decision_core` | https://git.hs-coburg.de/TEAM_BLAZE/decision_core               |  [Jithu Viswanathen Pillai Nath](https://git.hs-coburg.de/JithuNath)
 | `localization` | https://git.hs-coburg.de/TEAM_BLAZE/localization                 |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 | `v2x_receiver` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_receiver                 |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
-| `path_planning` | https://git.hs-coburg.de/TEAM_BLAZE/path_planning               |  [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
-| `control` | https://git.hs-coburg.de/TEAM_BLAZE/control                           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s)
+| `obstacle_detection` | https://git.hs-coburg.de/TEAM_BLAZE/obstacle_detection     |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
+| `path_planning` | https://git.hs-coburg.de/TEAM_BLAZE/path_planning               |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid), [Abhijith Balakrishnan](https://git.hs-coburg.de/ABHIJITH_B)
+| `control` | https://git.hs-coburg.de/TEAM_BLAZE/control                           |  [Jia Yong Lau](https://git.hs-coburg.de/jia0198s), [Swaroop Somaling Tubaki](https://git.hs-coburg.de/swa8082s)
 | `v2x_transmitter` | https://git.hs-coburg.de/TEAM_BLAZE/v2x_transmitter           |  [Pranav Balaji Balachandran](https://git.hs-coburg.de/pra0440s)
-| `vehicle_visualizer` | https://git.hs-coburg.de/TEAM_BLAZE/Vehicle_Visualizer     |  [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
+| `vehicle_visualizer` | https://git.hs-coburg.de/TEAM_BLAZE/vehicle_visualizer     |  [Lindsay Shantha Rubia Kasthuri Kalaimathi](https://git.hs-coburg.de/lin9417s), [Tarek Abdelmeguid](https://git.hs-coburg.de/Tarek_Abdelmeguid)
 
 ## State Diagram
-This state diagram shows the different operational states of an autonomous shuttle. It starts in the Idle state and transitions to Driving when users board. Upon reaching a destination, it enters a Wait state. If at school, the shuttle ends its route. During Driving, a confirmed medical emergency shifts the shuttle to an Emergency state, after which it proceeds to the hospital (End). The diagram captures both normal and emergency flow scenarios.
+This state diagram shows the different operational states of an autonomous shuttle. It starts in the IDLE state and transitions to DRIVING when users board. Upon reaching a destination, it enters a WAIT state. If at school, the shuttle ends its route and enters END state. During DRIVING state, a confirmed medical emergency shifts the shuttle to an EMERGENCY state, after which it proceeds to the hospital. When the shuttle detected obstacle in front while it's in DRIVING or WAIT state, the system will switch the shuttle to EMERGENCY_STOP state to put the shuttle at halt. The diagram captures both normal and emergency flow scenarios.
 ```mermaid
 stateDiagram-v2
 direction LR
-    [*] --> Idle
-    Idle --> Driving : Users boarded the shuttle and door closed
-    Driving --> Wait : Shuttle arrived at the destination
-    Wait --> End : Shuttle arrived at school
-    Wait --> Driving : Users boarded the shuttle and door closed
-    Driving --> Emergency : Shuttle operator confirmed true medical emergencies alarm
-    Emergency --> End : Shuttle arrived at hospital
-    End --> [*]
+    [*] --> IDLE
+    IDLE --> DRIVING : Users boarded the shuttle and door closed
+    DRIVING --> WAIT : Shuttle arrived at the destination
+    WAIT --> END : Shuttle arrived at school
+    WAIT --> DRIVING : Users boarded the shuttle and door closed
+    DRIVING --> EMERGENCY : Shuttle operator confirmed true medical emergencies alarm
+    DRIVING --> EMERGENCY_STOP : Shuttle detected obstacle in front
+    EMERGENCY_STOP --> DRIVING : Shuttle detected no obstacle in front
+    WAIT --> EMERGENCY_STOP : Shuttle detected obstacle in front
+    EMERGENCY_STOP --> WAIT : Shuttle detected no obstacle in front
+    EMERGENCY --> END : Shuttle arrived at hospital
+    END --> [*]
 ```
 ## Activity Diagram
 ### Activity 1: Medical Emergencies detected while driving
-This activity diagram outlines the steps taken when a medical emergency is detected while driving. The AI system identifies distress, notifies the operator, and the operator validates the situation. If it’s a true emergency, the shuttle reroutes to a hospital and sends alerts to medical services and parents. If it’s a false alarm, normal operations resume.
+This activity diagram outlines the steps taken when a medical emergency is detected while driving. The computer vision system identifies distress, notifies the operator, and the operator validates the situation. If it’s a true emergency, the shuttle reroutes to a hospital and sends alerts to medical services and parents. If it’s a false alarm, normal operations resume.
 ```mermaid
 flowchart TD
 
     0(( )) --> 1[Autonomous shuttle started to move towards next destination]
     1 --> 2[User faces medical emergencies]
-    2 --> 3[AI camera detected and send notifications to shuttle operator ]
+    2 --> 3[Computer vision system detected and send notifications to shuttle operator ]
     3 --> 4[Autonomous shuttle operators intervene to confirm it is True or False Alarm]
     4 --> 4A{ }
     4A -->|True Alarm| 5[Autonomous shuttle re-plans new route to nearby hospital]
@@ -161,7 +166,7 @@ sequenceDiagram
 ```
 
 ## Installation
-This section provide guidance on how to setup our ROS2 software. By using [repo](https://gerrit.googlesource.com/git-repo) tool we can clone all of the latest revision of our submodules at once by referring to the repositories link stated in [manifest.xml](./manifest.xml).
+This section provide guidance on how to setup our ROS2 software. By using [vcs](https://github.com/dirk-thomas/vcstool) tool we can clone all of the latest revision of our submodules at once by referring to the repositories link stated in [dependencies.repos](./dependencies.repos).
 1. Clone the repository:
 ```bash
  git clone https://git.hs-coburg.de/TEAM_BLAZE/ad_system_main.git
@@ -191,13 +196,15 @@ pip3 install -r requirements.txt
 This section provide guidance on how to run our ROS2 software.
 ### Launching the Nodes
 To launch all of the nodes in ad system main package, run the following command:
-
+:warning: *Note: The launch file does not cover interior_monitoring's nodes because those will be only run in docker container.*
 ```bash
 ros2 launch ad_system_main ad_system_main.launch.py
 ```
 
 ## Testing
 This section provide guidance on how to perform integration test of all of our submodules in our ROS2 software.
+### Integration Tests
+Please refer to [test](test/) directory for detailed information on integration testing.
 ### System Tests
 To run the system tests for this package, use the similar command from launch file:
 

@@ -22,9 +22,9 @@ repositories:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/path_planning.git
     version: main
-  control:
+  trajectory_control:
     type: git
-    url: git@git.hs-coburg.de:TEAM_BLAZE/control.git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/trajectory_control.git
     version: main
   v2x_transmitter:
     type: git
@@ -33,6 +33,18 @@ repositories:
   custom_msg:
     type: git
     url: git@git.hs-coburg.de:TEAM_BLAZE/custom_msg.git
+    version: main
+  decision_core:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/decision_core.git
+    version: main
+  obstacle_detection:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/obstacle_detection.git
+    version: main
+  vehicle_visualizer:
+    type: git
+    url: git@git.hs-coburg.de:TEAM_BLAZE/vehicle_visualizer.git
     version: main
 
   # =============================
