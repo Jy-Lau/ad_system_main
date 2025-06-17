@@ -1,6 +1,6 @@
 ## Testing
-Before carrying out unit testing, please make sure to perform installation by colcon build and sourcing the workspace. To test only this package, perform ```colcon build --packages-select decision_core path_planning_pkg trajectory_control obstacle_detection custom_msg ackermann_msgs``` and ```source install/setup.bash``` is sufficient, without building other packages. Details on how to clone every depedencies repo, please refer to [installation](../README.md#installation).
-### Unit Tests
+Before carrying out integration testing, please make sure to perform installation by colcon build and sourcing the workspace. To test only this package, perform ```colcon build --packages-select decision_core path_planning_pkg trajectory_control obstacle_detection custom_msg ackermann_msgs``` and ```source install/setup.bash``` is sufficient, without building other packages. Details on how to clone every depedencies repo, please refer to [installation](../README.md#installation).
+### Integration Tests
 1. Setup pytest tool:
 ```bash
 pip3 install pytest
