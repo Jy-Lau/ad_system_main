@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.5, pluggy-1.5.0
+rootdir: /home/pranav/integration_test/src/integration_test
+plugins: launch-testing-1.0.8, ament-lint-0.12.12, ament-xmllint-0.12.12, ament-copyright-0.12.12, ament-pep257-0.12.12, launch-testing-ros-0.19.9, ament-flake8-0.12.12, hydra-core-1.3.2, mock-3.14.0, cov-3.0.0, colcon-core-0.19.0
+collected 1 item
+
+TC_Int006.py [INFO] [1753649657.662122561] [integration_test_node]: Published pose inside DWA zone.
+[INFO] [1753649657.662491928] [integration_test_node]: Expected Result 1: PASSED
+[INFO] [1753649657.667913111] [integration_test_node]: DWA Path received.
+[INFO] [1753649657.731806515] [integration_test_node]: DWA Path received.
+[INFO] [1753649657.796631268] [integration_test_node]: DWA Path received.
+[INFO] [1753649657.861607417] [integration_test_node]: DWA Path received.
+[INFO] [1753649657.925305135] [integration_test_node]: DWA Path received.
+[INFO] [1753649657.975918499] [integration_test_node]: Expected Result 2: PASSED
+[INFO] [1753649657.976460285] [integration_test_node]: Published fake LaserScan.
+[INFO] [1753649657.976758305] [integration_test_node]: Expected Result 3a: PASSED
+[INFO] [1753649657.977254543] [integration_test_node]: Published mocked path.
+[INFO] [1753649657.977545371] [integration_test_node]: Expected Result 3b: PASSED
+[INFO] [1753649657.982142782] [integration_test_node]: Costmap received.
+[INFO] [1753649657.990277839] [integration_test_node]: DWA Path received.
+[INFO] [1753649658.054395804] [integration_test_node]: DWA Path received.
+[INFO] [1753649658.055917713] [integration_test_node]: Trigger replan service call succeeded.
+[INFO] [1753649658.056229584] [integration_test_node]: Expected Result 4: PASSED
+[INFO] [1753649658.056524686] [integration_test_node]: Expected Result 5a: PASSED
+[INFO] [1753649658.056806587] [integration_test_node]: Expected Result 5b: PASSED
+[INFO] [1753649658.057077968] [integration_test_node]: Final Result: PASSED
+.
+
+============================== 1 passed in 0.71s ===============================
