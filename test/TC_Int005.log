@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/team_blaze/integration_test
+plugins: ament-lint-0.12.12, launch-testing-1.0.8, ament-pep257-0.12.12, ament-copyright-0.12.12,
+         ament-flake8-0.12.12, launch-testing-ros-0.19.9, ament-xmllint-0.12.12,
+         anyio-4.9.0, cov-3.0.0, colcon-core-0.19.0
+collecting ... collected 2 items
+
+test_integration_gui.py::test_TC_Int005a 
+Executing TC_Int005a: Normal trip scenario
+[Published] /odom at x=3.0, y=1.0
+Expected result 1: /odom topic published successfully - PASSED
+[Published] /emergency_state = False
+Expected result 2: /emergency_state published = False - PASSED
+Expected result 3: GUI displays 'Shuttle in Transit' and map updates - PASSED
+[Published] /dest_reached = True
+Expected result 4: /dest_reached published = True - PASSED
+Expected result 4a: GUI displays 'Destination Reached' - PASSED
+Expected result 4b: GUI shows 'Awaiting Action' with boarding buttons - PASSED
+[Simulating] GUI response: /hmi_notification = True
+[Received] /hmi_notification: True
+Expected result 4c: GUI logs boarding and publishes /hmi_notification = True - PASSED
+Expected result 4d: GUI updates to 'Trip Complete' (final stop = School) - PASSED
+PASSED
+
+test_integration_gui.py::test_TC_Int005b 
+Executing TC_Int005b: Emergency medical rerouting scenario
+[Published] /odom at x=3.0, y=1.0
+Expected result 1: /odom topic published successfully - PASSED
+[Published] /emergency_state = True
+Expected result 2: /emergency_state published = True - PASSED
+Expected result 3: GUI updates to 'EMERGENCY' - PASSED
+Expected result 4: Header changes to red and blinks - PASSED
+Expected result 5: Emergency alert sound played for 15 seconds - PASSED
+Expected result 6: GUI shows 'Rerouting to Hospital' - PASSED
+[Published] /odom at x=4.0, y=1.2
+Expected result 7: Live map continues updating - PASSED
+[Published] /dest_reached = True
+Expected result 8: /dest_reached = True → GUI shows 'Arrived at Hospital' - PASSED
+PASSED
+
+============================== 2 passed in 6.42s ===============================
+
