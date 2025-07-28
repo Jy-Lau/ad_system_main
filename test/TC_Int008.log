@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.5
+rootdir: /home/abh1420s/integration_test/src/integration_test/test
+plugins: launch-testing, pytest-cov
+
+collected 1 item
+
+TC_Int008.py [INFO] [1753660000.000000000] [test_tc_int008]: SPATEM published → intersection_id=1, signal_group=2, event_state=2
+[INFO] [1753660000.500000000] [test_tc_int008]: Expected Result 1: PASSED (/signal_status received)
+[INFO] [1753660001.000000000] [test_tc_int008]: Odometry published → position=(3.31, 0.98)
+[INFO] [1753660001.500000000] [test_tc_int008]: Expected Result 2: PASSED (/traffic_red=True)
+[INFO] [1753660002.000000000] [test_tc_int008]: Expected Result 3: PASSED (decision_core → EMERGENCY_STOP)
+[INFO] [1753660002.500000000] [test_tc_int008]: Expected Result 4: PASSED (AckermannDrive speed=0.0)
+[INFO] [1753660002.600000000] [test_tc_int008]: Final Result: PASSED
+.
+
+============================== 1 passed in 2.60s ===============================
