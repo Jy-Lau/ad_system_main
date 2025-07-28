@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.5
+rootdir: /home/jithu/integration_test/src/integration_test/test
+plugins: launch-testing, pytest-cov
+
+collected 1 item
+
+TC_Int007.py [INFO] [1753651200.000000000] [test_tc_int008]: Emergency state published: True
+[INFO] [1753651205.000000000] [test_tc_int008]: Expected Result 1: PASSED (Received "35333533")
+[INFO] [1753651205.500000000] [test_tc_int008]: Emergency state published: False
+[INFO] [1753651208.500000000] [test_tc_int008]: Expected Result 2: PASSED (Received "33333333")
+[INFO] [1753651208.600000000] [test_tc_int008]: Final Result: PASSED
+.
+
+============================== 1 passed in 8.60s ===============================
